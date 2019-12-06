@@ -108,7 +108,6 @@ export default class SignUpModal extends Modal {
         {app.translator.trans('core.forum.sign_up.submit_button')}
       </Button>
     </div>, -10);
-
     return items;
   }
 
@@ -168,11 +167,16 @@ export default class SignUpModal extends Modal {
    * @public
    */
   submitData() {
+
+    var usnm = this.email();
+    if (usnm.indexOf("@shanghaitech.edu.cn") == -1) 
+      usnm = ""
+
     const data = {
       username: this.username(),
-      email: this.email()
+      email: usnm
     };
-
+    
     if (this.props.token) {
       data.token = this.props.token;
     } else {
