@@ -167,7 +167,10 @@ export default class SignUpModal extends Modal {
    * @public
    */
   submitData() {
-
+    /**
+     * You found here!!! However, it is no use. Next is Backend~~
+     * 
+     */
     var usnm = this.email();
     if (usnm.indexOf("@shanghaitech.edu.cn") == -1) 
       usnm = ""
@@ -176,7 +179,7 @@ export default class SignUpModal extends Modal {
       username: this.username(),
       email: usnm
     };
-    
+
     if (this.props.token) {
       data.token = this.props.token;
     } else {

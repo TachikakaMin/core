@@ -75,6 +75,14 @@ class RegisterUserHandler
             $this->assertAdmin($actor);
         }
 
+        $check_email = Arr::get($data, 'attributes.email');
+        $shtu = "@shanghaitech.edu.cn";
+        $t = strstr($check_email,"@");
+        if (strcmp($t,$shtu) !== 0)
+            $this->assertAdmin($actor);
+            
+
+
         $password = Arr::get($data, 'attributes.password');
 
         // If a valid authentication token was provided as an attribute,
